@@ -45,7 +45,7 @@ body {
 
 .section {
     position: relative;
-    padding: 6rem 2rem;
+    padding: 4rem 2rem;
     max-width: 960px;
     margin: 0 auto;
 }
@@ -231,4 +231,8 @@ footer > .icon-text {
 
 #message{
     font-family: Arial, serif;
+}
+
+#company{
+    cursor: pointer;
 }
