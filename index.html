@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Business Card</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Jan Stonecamp</h1>
+      <h2>Kabelträger</h2>
+      <p>Mache ab und zu immer mal wieder was für so bekannte und möchte das gerne bisschen ausweiten</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="about section">
+      <span class="section-number">01</span>
+      <h3>Über mich</h3>
+      <p>
+        Ich heiße Jan und bin ausgebildeter Fachinformatiker für Systemintegration.
+		Meine Leidenschaft gilt stabilen, sicheren und effizienten IT-Lösungen.
+		Ich unterstütze Unternehmen und Privatkunden bei der Planung, Einrichtung und Betreuung ihrer IT-Infrastruktur. <br/><br/>Zuverlässig, praxisnah und lösungsorientiert.
+      </p>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services section">
+      <span class="section-number">02</span>
+      <h3>Services</h3>
+
+      <div class="service-grid">
+        <div class="card">
+          <h4>Service 1</h4>
+          <p>Service 1 Text</p>
+        </div>
+        <div class="card">
+          <h4>Service 2</h4>
+          <p>Service 2 Text</p>
+        </div>
+        <div class="card">
+          <h4>Service 3</h4>
+          <p>Service 3 Text</p>
+        </div>
+        <div class="card">
+          <h4>Service 4</h4>
+          <p>Service 4 Text</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact section">
+      <span class="section-number inverted">03</span>
+      <h3>Contact</h3>
+
+      <form>
+        <input type="text" placeholder="Name" required />
+        <input type="email" placeholder="Email" required />
+        <textarea placeholder="" rows="4" required></textarea>
+        <button type="submit">Lass schnacken</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+	<p>©<span id="year"></span> Jan Steinkamp</p>
+    <a href="./impressum">Impressum</a>&nbsp;&nbsp;&nbsp;<a href="./datenschutz">Datenschutz</a>
+  </footer>
+
+</body>
+</html>
