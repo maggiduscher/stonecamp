@@ -17,19 +17,6 @@
             <a href="#services">Services</a>
             <a href="#kontakt">Kontakt</a>
         </b>
-
-        <script>
-            const cmp = document.getElementById("company");
-
-            cmp.addEventListener("click", () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-
-                history.replaceState(null, document.title, window.location.pathname + window.location.search);
-            });
-        </script>
     </div>
     <div class="hero-overlay">
         <div class="hero-content">
@@ -51,7 +38,6 @@
         </p>
     </section>
 
-    <!-- SERVICES -->
     <section id="services" class="services section">
         <h3>Services</h3>
 
@@ -113,7 +99,6 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="kontakt" class="contact section">
         <span>
             <h3>Kontaktier' mich!</h3>
@@ -121,24 +106,6 @@
                 <input id="name" type="text" placeholder="Name" required/>
                 <textarea id="message" placeholder="Nachricht" rows="4" required></textarea>
                 <button type="submit">Senden</button>
-
-                <script>
-                    document.getElementById("contact-form").addEventListener("submit", function (e) {
-                        e.preventDefault();
-
-                        const name = document.getElementById("name").value;
-                        const message = document.getElementById("message").value;
-
-                        const numbers = [105, 110, 102, 111, 64, 105, 116, 45, 115, 101, 114, 118, 105, 99, 101, 45, 115, 116, 101, 105, 110, 107, 97, 109, 112, 46, 100, 101];
-                        const subject = encodeURIComponent("Kontaktanfrage " + name);
-                        const body = encodeURIComponent(
-                            "Name:\n" + name + "\n\n" +
-                            "Nachricht:\n" + message
-                        );
-
-                        window.location.href = `mailto:Jan%20Steinkamp<${String.fromCharCode(...numbers)}>?subject=${subject}&body=${body}`;
-                    })
-                </script>
             </form>
         </span>
         <span id="info">
