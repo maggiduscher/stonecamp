@@ -210,3 +210,7 @@ footer > .icon-text {
 #anchors a:hover {
     color: #fff;
 }
+
+#message{
+    font-family: Arial, serif;
+}
