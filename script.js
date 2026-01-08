@@ -23,4 +23,53 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
     );
 
     window.location.href = `mailto:Jan%20Steinkamp<${String.fromCharCode(...numbers)}>?subject=${subject}&body=${body}`;
-})
+
+    document.getElementById("form-feedback").style.display = "block";
+});
+
+const themeToggle = document.getElementById("theme-toggle");
+const sunIcon = document.getElementById("sun-icon");
+const moonIcon = document.getElementById("moon-icon");
+const body = document.body;
+
+function updateThemeIcons(isDark) {
+    if (isDark) {
+        sunIcon.style.display = "none";
+        moonIcon.style.display = "block";
+        return;
+    }
+    sunIcon.style.display = "block";
+    moonIcon.style.display = "none";
+}
+
+function setTheme(theme) {
+    body.classList.remove("dark-mode", "light-mode");
+    const isSystemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (theme === "dark" || ((theme === "" || theme === null) && isSystemDark)) {
+        body.classList.add("dark-mode");
+        body.classList.remove("light-mode");
+        localStorage.setItem("theme", "dark");
+        updateThemeIcons(true);
+
+        return;
+    }
+
+    body.classList.add("light-mode");
+    body.classList.remove("dark-mode");
+    localStorage.setItem("theme", "light");
+    updateThemeIcons(false);
+}
+
+setTheme(localStorage.getItem("theme"));
+
+themeToggle.addEventListener("click", () => {
+    const isDark = body.classList.contains("dark-mode") || 
+                  (!body.classList.contains("light-mode") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    
+    if (isDark) {
+        setTheme("light");
+        return;
+    }
+    setTheme("dark");
+    localStorage.setItem("theme", "dark");
+});
