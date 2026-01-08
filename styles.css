@@ -53,6 +53,9 @@ body {
 .section h3 {
     font-size: 1.4rem;
     margin-bottom: 1.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 section#kontakt{
@@ -79,8 +82,18 @@ section#kontakt span#info{
     z-index: 0;
 }
 
-.about p {
+#aboutText{
+    display: grid;
     max-width: 700px;
+    margin: 0 auto;
+}
+
+#aboutText #list{
+    margin: auto;
+    font-size: 1.4rem;
+}
+
+.about p {
     color: #333;
 }
 
