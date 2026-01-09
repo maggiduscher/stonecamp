@@ -93,6 +93,22 @@ section#kontakt span#info{
     font-size: 1.4rem;
 }
 
+.contact-button {
+    display: inline-block;
+    margin: 3.5rem auto 0;
+    padding: 0.8rem 2rem;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+}
+
+.contact-button:hover {
+    background-color: #333;
+}
+
 .about p {
     color: #333;
 }
@@ -308,6 +324,15 @@ body.dark-mode .card p {
 
 body.dark-mode .section-number {
     color: #1a1a1a;
+}
+
+body.dark-mode .contact-button {
+    background-color: #fff;
+    color: #000;
+}
+
+body.dark-mode .contact-button:hover {
+    background-color: #ddd;
 }
 
 body.dark-mode footer {
