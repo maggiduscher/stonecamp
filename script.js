@@ -1,6 +1,11 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
 document.getElementById("company").addEventListener("click", () => {
+    if (window.location.pathname !== "/" && window.location.pathname !== "/index.html") {
+        window.location.href = "/";
+        return;
+    }
+
     window.scrollTo({
         top: 0,
         behavior: "smooth"

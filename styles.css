@@ -9,6 +9,20 @@ body {
     background: #fff;
     color: #000;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+main#impressum, main#datenschutz{
+    padding: 2rem;
+    line-height: 1.6;
+    width: 800px;
+    margin: 0 auto;
 }
 
 .hero {
@@ -93,7 +107,7 @@ section#kontakt span#info{
     font-size: 1.4rem;
 }
 
-.contact-button {
+.default-button {
     display: inline-block;
     margin: 3.5rem auto 0;
     padding: 0.8rem 2rem;
@@ -105,7 +119,7 @@ section#kontakt span#info{
     width: fit-content;
 }
 
-.contact-button:hover {
+.default-button:hover {
     background-color: #333;
 }
 
@@ -243,6 +257,7 @@ footer > .icon-text {
     display: block;
     background-color: #000;
     width: 100vw;
+    height: 3rem;
     padding: 11px;
     z-index: 1;
     text-align: center;
@@ -326,12 +341,12 @@ body.dark-mode .section-number {
     color: #1a1a1a;
 }
 
-body.dark-mode .contact-button {
+body.dark-mode .default-button {
     background-color: #fff;
     color: #000;
 }
 
-body.dark-mode .contact-button:hover {
+body.dark-mode .default-button:hover {
     background-color: #ddd;
 }
 
