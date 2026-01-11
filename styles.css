@@ -236,7 +236,7 @@ footer > .icon-text {
 @media (max-width: 820px) {
     #info{
         font-size: 0.8rem;
-        padding-left: 2rem;
+        padding-left: 1.3rem;
     }
 
     #anchors h1{
@@ -249,6 +249,11 @@ footer > .icon-text {
 
     .hero h2 {
         font-size: 2rem;
+    }
+
+    #aboutText #list{
+        margin: auto;
+        font-size: 1rem;
     }
 }
 
