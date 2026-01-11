@@ -18,7 +18,7 @@ main {
     flex: 1;
 }
 
-main#impressum, main#datenschutz{
+main:not(#default) {
     padding: 2rem;
     line-height: 1.6;
     max-width: 800px;
