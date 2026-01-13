@@ -248,6 +248,10 @@ footer > .icon-text {
         right: 0;
     }
 
+    #mail-icon, #telephone-icon {
+        display: none;
+    }
+
     .hero h2 {
         font-size: 2rem;
     }
@@ -286,9 +290,8 @@ footer > .icon-text {
     padding-left: 10px;
 }
 
-#theme-toggle {
+#theme-toggle, #mail-icon, #telephone-icon {
     position: absolute;
-    right: 10px;
     top: 50%;
     transform: translateY(-50%);
     background: transparent;
@@ -300,7 +303,19 @@ footer > .icon-text {
     padding: 5px;
 }
 
-#theme-toggle:hover svg {
+#theme-toggle {
+    right: 10px;
+}
+
+#mail-icon {
+    right: 42px;
+}
+
+#telephone-icon {
+    right: 74px;
+}
+
+#theme-toggle:hover svg, #telephone-icon:hover svg, #mail-icon:hover svg  {
     fill: #fff;
 }
 
