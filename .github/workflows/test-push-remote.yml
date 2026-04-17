@@ -1,0 +1,36 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY_STEINKAMP }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Clone repo
+        run: git clone git@github.com:${{ github.repository_owner }}/steinkamp-page.git
+
+      - name: Copy files
+        run: |
+          rsync -av --delete ./ steinkamp-page/ --exclude .git
+
+      - name: Commit & Push
+        run: |
+          cd steinkamp-page
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add .
+          git commit -m "Sync from source" || echo "No changes"
+          git push origin main
