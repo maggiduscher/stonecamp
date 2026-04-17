@@ -31,7 +31,7 @@ jobs:
 
       - name: Copy files
         run: |
-          rsync -av --delete ./ steinkamp-page/ --exclude .git
+          rsync -av --delete ./ steinkamp-page/ --exclude .git --exclude .github
 
       - name: Commit & Push
         run: |
