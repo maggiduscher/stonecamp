@@ -14,10 +14,17 @@ jobs:
 
       - name: Setup SSH
         run: |
-              printf '%s\n' "${{ secrets.SSH_KEY_STEINKAMP }}" | tr -d '\r' > ~/.ssh/id_rsa
-              chmod 600 ~/.ssh/id_rsa
-              ssh-keyscan github.com >> ~/.ssh/known_hosts
-              ssh-keygen -yf ~/.ssh/id_rsa > /dev/null
+                  mkdir -p ~/.ssh
+                  printf '%s\n' "${{ secrets.REPO_B_SSH_KEY }}" | tr -d '\r' > ~/.ssh/id_rsa
+                  chmod 600 ~/.ssh/id_rsa
+                  ssh-keyscan github.com >> ~/.ssh/known_hosts
+                  cat > ~/.ssh/config <<'EOF'
+                  Host github.com
+                    IdentityFile ~/.ssh/id_rsa
+                    IdentitiesOnly yes
+                  EOF
+                  test -f ~/.ssh/id_rsa
+                  ssh-keygen -yf ~/.ssh/id_rsa > /dev/null
 
       - name: Clone repo
         run: git clone git@github.com:${{ github.repository_owner }}/steinkamp-page.git
