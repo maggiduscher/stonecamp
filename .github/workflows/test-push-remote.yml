@@ -14,10 +14,10 @@ jobs:
 
       - name: Setup SSH
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_KEY_STEINKAMP }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
+              printf '%s\n' "${{ secrets.SSH_KEY_STEINKAMP }}" | tr -d '\r' > ~/.ssh/id_rsa
+              chmod 600 ~/.ssh/id_rsa
+              ssh-keyscan github.com >> ~/.ssh/known_hosts
+              ssh-keygen -yf ~/.ssh/id_rsa > /dev/null
 
       - name: Clone repo
         run: git clone git@github.com:${{ github.repository_owner }}/steinkamp-page.git
