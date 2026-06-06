@@ -68,9 +68,29 @@ main:not(#default) {
 .section h3 {
     font-size: 1.4rem;
     margin-bottom: 1.5rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+}
+
+.about-container {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.portrait-wrapper {
+    flex: 0 0 300px;
+}
+
+.portrait {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.about-content {
+    flex: 1;
 }
 
 section#kontakt{
@@ -99,8 +119,6 @@ section#kontakt span#info{
 
 #aboutText{
     display: grid;
-    max-width: 700px;
-    margin: 0 auto;
 }
 
 #aboutText #list{
@@ -265,6 +283,18 @@ footer > .icon-text {
     #aboutText #list{
         margin: auto;
         font-size: 1rem;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .portrait-wrapper {
+        flex: 0 0 auto;
+        max-width: 250px;
     }
 
     main:not(#default) {
