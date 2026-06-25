@@ -264,8 +264,17 @@ footer > .icon-text {
         padding-left: 1.3rem;
     }
 
-    #anchors h1{
+    #anchors h1 {
         display: none;
+    }
+
+    #logo-link {
+        display: flex;
+        left: 5px;
+    }
+
+    #logo {
+        height: 2rem;
     }
 
     #theme-toggle {
@@ -312,7 +321,7 @@ footer > .icon-text {
     display: block;
     background-color: #000;
     width: 100vw;
-    height: 3rem;
+    height: 4rem;
     padding: 11px;
     z-index: 1;
     text-align: center;
@@ -320,10 +329,26 @@ footer > .icon-text {
 
 #anchors h1{
     position: absolute;
-    left: 10px;
-    top: 8px;
-    font-size: 1.1rem;
+    left: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
     padding-left: 10px;
+}
+
+#logo {
+    height: 2.5rem;
+    width: auto;
+    vertical-align: middle;
+}
+
+#logo-link {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
 }
 
 #theme-toggle, #mail-icon, #telephone-icon {
@@ -352,6 +377,11 @@ footer > .icon-text {
 
 #theme-toggle:hover svg, #telephone-icon:hover svg, #mail-icon:hover svg  {
     fill: #fff;
+}
+
+#anchors b {
+    display: inline-block;
+    padding-top: 5px;
 }
 
 #anchors * {
